@@ -1,1 +1,2 @@
 require('conf')
+require('lazynvim')
