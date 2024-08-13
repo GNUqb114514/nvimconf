@@ -23,4 +23,8 @@ return {
         },
         opts = {},
     },
+    {
+        'akinsho/bufferline.nvim',
+        opts = {},
+    },
 }
