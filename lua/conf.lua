@@ -24,6 +24,10 @@ vim.keymap.set('n', '<leader>nh', '<cmd>nohlsearch<CR>')
 vim.opt.wildmenu = true
 vim.opt.completeopt = { 'menuone', 'popup', 'noinsert', 'noselect' }
 
+-- Buffer-related
+vim.keymap.set('n', '<leader>hb', '<cmd>bnext<CR>')
+vim.keymap.set('n', '<leader>lb', '<cmd>bprevious<CR>')
+
 -- Miscellaneous
 vim.opt.cursorline = true  -- Highlight current line
 vim.opt.title = true       -- Change window title
