@@ -27,4 +27,13 @@ return {
         'akinsho/bufferline.nvim',
         opts = {},
     },
+    {   -- Show lines for indents.
+        'lukas-reineke/indent-blankline.nvim',
+        main = 'ibl',
+        opts = {},
+    },
+    {   -- Git integration, show lines indicating line status in git.
+        'lewis6991/gitsigns.nvim',
+        opts = {},
+    },
 }
