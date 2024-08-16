@@ -28,6 +28,15 @@ vim.opt.completeopt = { 'menuone', 'popup', 'noinsert', 'noselect' }
 vim.keymap.set('n', '<leader>lb', '<cmd>bnext<CR>')
 vim.keymap.set('n', '<leader>hb', '<cmd>bprevious<CR>')
 
+-- What a fxxking genius!
+for i = 97,122 do
+    vim.keymap.set('i', '<M-' .. string.char(i) .. '>', '<Nop>')
+end
+for i = 0,9 do
+    vim.keymap.set('i', '<M-' .. i .. '>', '<Nop>')
+end
+vim.keymap.set('i', '<M-;>', '<Nop>')
+
 -- Miscellaneous
 vim.opt.cursorline = true  -- Highlight current line
 vim.opt.title = true       -- Change window title
