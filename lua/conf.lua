@@ -25,8 +25,8 @@ vim.opt.wildmenu = true
 vim.opt.completeopt = { 'menuone', 'popup', 'noinsert', 'noselect' }
 
 -- Buffer-related
-vim.keymap.set('n', '<leader>hb', '<cmd>bnext<CR>')
-vim.keymap.set('n', '<leader>lb', '<cmd>bprevious<CR>')
+vim.keymap.set('n', '<leader>lb', '<cmd>bnext<CR>')
+vim.keymap.set('n', '<leader>hb', '<cmd>bprevious<CR>')
 
 -- Miscellaneous
 vim.opt.cursorline = true  -- Highlight current line
