@@ -20,11 +20,19 @@ return {
                     documentation = cmp.config.window.bordered(),
                 },
                 mapping = {
-                    ['<Tab>'] = function ()
-                        cmp.select_next_item{behavior=cmp.SelectBehavior.Insert}
+                    ['<Tab>'] = function (fallback)
+                        if cmp.visible() then
+                            cmp.select_next_item{behavior=cmp.SelectBehavior.Insert}
+                        else
+                            fallback()
+                        end
                     end,
-                    ['<S-Tab>'] = function ()
-                        cmp.select_prev_item{behavior=cmp.SelectBehavior.Insert}
+                    ['<S-Tab>'] = function (fallback)
+                        if cmp.visible() then
+                            cmp.select_prev_item{behavior=cmp.SelectBehavior.Insert}
+                        else
+                            fallback()
+                        end
                     end,
                 },
             }
