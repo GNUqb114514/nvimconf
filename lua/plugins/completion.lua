@@ -50,7 +50,13 @@ return {
                             if luasnip.expandable() then
                                 luasnip.expand()
                             else
-                                cmp.confirm({select = false})
+                                local entry = cmp.get_selected_entry()
+                                local kind = require('cmp.types').lsp.CompletionItemKind[entry:get_kind()]
+                                if kind == "Snippet" then
+                                    cmp.confirm()
+                                else
+                                    fallback()
+                                end
                             end
                         else
                             fallback()
