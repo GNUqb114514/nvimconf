@@ -3,6 +3,9 @@ return {
         "L3MON4D3/LuaSnip",
     },
     {
+        "onsails/lspkind.nvim",
+    },
+    {
         "hrsh7th/nvim-cmp",
         dependencies = {
             "hrsh7th/cmp-path",
@@ -21,6 +24,14 @@ return {
             local cmp = require('cmp')
             local luasnip = require('luasnip')
             cmp.setup {
+                formatting = {
+                    format = require('lspkind').cmp_format {
+                        mode = 'symbol',
+                        elipsis_char = '...',
+                    },
+                    expandable_indicator = true,
+                    fields = {'abbr', 'kind'},
+                },
                 snippet = {
                     expand = function (args)
                         require('luasnip').lsp_expand(args.body)
@@ -51,6 +62,10 @@ return {
                                 luasnip.expand()
                             else
                                 local entry = cmp.get_selected_entry()
+                                if entry == nil then
+                                    fallback()
+                                    return
+                                end
                                 local kind = require('cmp.types').lsp.CompletionItemKind[entry:get_kind()]
                                 if kind == "Snippet" then
                                     cmp.confirm()
