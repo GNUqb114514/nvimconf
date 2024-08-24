@@ -38,6 +38,13 @@ return {
     {
         "s1n7ax/nvim-window-picker",
         config = function ()
+            require('window-picker').setup {
+                filter_rules = {
+                    bo = {
+                        filetype = { 'fidget' }
+                    }
+                }
+            }
             vim.keymap.set('n', "<leader>pw",
                 function ()
                     local window_number = require('window-picker').pick_window()
