@@ -15,7 +15,7 @@ after I write them. :)
 - Plugin manager: [lazy.nvim](https://github.com/folke/lazy.nvim);
 - Theme: [tokyonight-night](https://github.com/folke/tokyonight);
 - Status line: [lualine](https://github.com/nvim-lualine/lualine.nvim);
-- Finder: [telescope](https://github.com/nvim-telescope/telescope.nvim) with:
+- Finder: [telescope.nvim](https://github.com/nvim-telescope/telescope.nvim) with:
   - [telescope-fzf-native.nvim](https://github.com/nvim-telescope/telescope-fzf-native.nvim);
 - [Treesitter](https://github.com/nvim-treesitter/nvim-treesitter);
 - Builtin LSP with:
@@ -44,3 +44,32 @@ There're also some special mappings:
   > because you'll probably press it after pressing `<F5>`
   > to start debugging, or other debugging keys
   > rather than other keys like `<leader>th` (for fuzzy finding help tags).
+
+## FAQ
+
+Here are some questions that you may ask.
+
+> **F**requently **A**sked **Q**uestions, of course.
+
+### Why not [LazyVim](https://github.com/LazyVim/LazyVim) or sth else?
+
+1. I want a lightweight config,
+   but they're almost always contains a lot of plugins that I don't want.
+2. Instead learn exist mappings, I would define my own. It's obviously that
+   custom things always easy to remember than existing things to who made it custom.
+
+> Okay, to be honest in fact I just hate start screen plugins.
+
+### Why not use a start screen plugin, like [dashboard-nvim](https://github.com/nvimdev/dashboard-nvim)?
+
+Because:
+1. the features they provided does not useful for me. e.g. for things defined in LazyVim:
+   - to find a file I can use [telescope.nvim](https://github.com/nvim-telescope/telescope.nvim);
+   - to create a file I can `nvim {newfilename}`;
+   - pick recent file means work starts from previous edited project,
+     but for me I know what project I just write;
+   - it's horrible to find texts without opening any file;
+   - to open a config I can `nvim {path}`;
+   - no need for restore sessions;
+   - for lazy.nvim palette I can `:Lazy`.
+2. they hid poor Uganda children-related things.
