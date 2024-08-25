@@ -131,3 +131,22 @@ Pros:
 
 Cons:
 - Write anything by hand.
+
+## Finder
+
+Refer to [`telescope.lua`](telescope.lua).
+
+### [telescope.nvim](https://github.com/nvim-telescope/telescope.nvim)
+Well-known plugin that find things.
+
+Pros:
+- Flexible design with big ecosystem.
+
+Cons:
+- Why we use normal mode in the finding field?
+
+### [telescope-fzf-native.nvim](https://github.com/nvim-telescope/telescope-fzf-native.nvim) 
+FZF integration for telescope.
+
+I think I haven't to write pros and cons.
+Remove it if you haven't or won't use FZF.
