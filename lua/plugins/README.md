@@ -150,3 +150,26 @@ FZF integration for telescope.
 
 I think I haven't to write pros and cons.
 Remove it if you haven't or won't use FZF.
+
+## Treesitter
+
+Refer to [`treesitter.lua`](treesitter.lua)
+
+### [nvim-treesitter](https://github.com/nvim-treesitter/nvim-treesitter) 
+A well-known neovim treesitter binding.
+
+Pros:
+- Advanced highlighting;
+- Very extendable.
+
+Cons:
+- A bit overlap with LSP.
+
+### [nvim-treesitter-textobjects](https://github.com/nvim-treesitter/nvim-treesitter-textobjects)
+Textobjects based on treesitter.
+
+Pros:
+- Powered by treesitter makes it flexible, configurable and powerful.
+
+Cons:
+- Sometimes conflict with nvim-treesitter-textobjects.
