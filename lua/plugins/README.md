@@ -283,3 +283,50 @@ Cons:
 - [cmp-nvim-lsp](https://github.com/hrsh7th/cmp-nvim-lsp): LSP
 - [cmp-cmdline](https://github.com/hrsh7th/cmp-cmdline): Command line (seems like not necessary)
 - [cmp-buffer](https://github.com/hrsh7th/cmp-buffer): Words in buffer
+
+## Debugging
+
+Refer to [debug.lua](debug.lua) 
+
+> [!WARNING]
+> Debugging is very special and difference between project.
+> You probably have to customize debugging for each project.
+
+### [nvim-dap](https://github.com/mfussenegger/nvim-dap) 
+DAP client implement for neovim.
+
+Pros:
+- Unified interface.
+
+Cons:
+- There're not many server implements.
+
+### [nvim-dap-ui](https://https://rcarriga/nvim-dap-ui) 
+UI for nvim-dap.
+
+Pros:
+- Complete UI.
+- Fully mouse support.
+
+Cons:
+TODO
+
+### [nvim-dap-virtual-text](https://github.com/theHamsta/nvim-dap-virtual-text) 
+Virtual text to show value of variables for nvim-dap.
+
+Pros:
+- Useful: Get value at a glance.
+
+Cons:
+- Not that beautiful.
+
+### [telescope-dap.nvim](https://github.com/nvim-telescope/telescope-dap.nvim) 
+Telescope integration for nvim-dap.
+
+Pros:
+- Beautiful interface.
+
+Cons:
+- There're not a good plan
+  to make it doesn't conflict with `continue()` of nvim-dap
+  in one key.
