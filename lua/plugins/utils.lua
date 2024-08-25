@@ -31,6 +31,7 @@ return {
     {
         "folke/which-key.nvim",
         opts = {},
+        enable = false;
     },
     {
         'echasnovski/mini.ai',
