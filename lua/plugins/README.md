@@ -173,3 +173,61 @@ Pros:
 
 Cons:
 - Sometimes conflict with nvim-treesitter-textobjects.
+
+## LSP
+
+Refer to [`lsp.lua`](lsp.lua).
+
+### [nvim-lspconfig](https://github.com/neovim/nvim-lspconfig) 
+An out-of-box configuration set for lsp.
+
+Pros:
+- Simple.
+
+Cons:
+- Not that flexible.
+
+### [mason.nvim](https://github.com/williamboman/mason.nvim)
+A market for LSPs, linters, formatters, etc.
+
+Pros:
+- Unified installing for LSP.
+
+Cons:
+- When you're attempting use an LSP that not supported...
+
+### [mason-lspconfig](https://github.com/williamboman/mason-lspconfig.nvim) 
+Integration for nvim-lspconfig and mason.nvim.
+
+Pros:
+- Really integrated.
+
+Cons:
+TODO
+
+### [lazydev.nvim](https://github.com/folke/lazydev.nvim) 
+LuaLS setup for neovim plugins and configs.
+
+Pros:
+- Really useful.
+
+Cons:
+TODO
+
+### [fidget.nvim](https://github.com/j-hui/figet.nvim) 
+LSP progress UI.
+
+Pros:
+- Not disturbing.
+
+Cons:
+- Weird color whe collapsed with characters.
+
+### [lspsaga.nvim](https://github.com/nvimdev/lspsaga.nvim) 
+More powerful and beautiful UI for LSP-related actions.
+
+Pros:
+- Good.
+
+Cons:
+- Fussy configuration.
