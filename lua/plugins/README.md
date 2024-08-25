@@ -68,7 +68,66 @@ Cons:
 Add signs indicates git status on the left.
 
 Pros:
-- Lightweight (1.55 ms on i5-4590 that outdated enough)
+- Lightweight (1.55 ms on i5-4590)
 
 Cons:
 TODO
+
+## Utils
+
+Refer to [`utils.lua`](utils.lua).
+
+### [nvim-autopairs](https://github.com/windwp/nvim-autopairs)
+Auto pair parens and brackets.
+
+Pros:
+- Lightweight (1.48 ms on i5-4590).
+
+Cons:
+- Sometimes not that intelligence.
+
+### [flash.nvim](https://github.com/folke/flash.nvim)
+**(Disabled)** Jump quickly.
+
+Pros:
+- Really quick.
+
+Cons:
+- **Does it required to be that quick?**
+
+### [neo-tree.nvim](https://github.com/nvim-neo-tree/neo-tree.nvim) 
+A tree explorer.
+
+Pros:
+- Co-operate with nvim-web-devicons;
+
+Cons:
+- Horrible key bindings.
+
+### [which-key.nvim](https://github.com/folke/which-key.nvim) 
+**(Disabled)** A tool for hinting keys.
+
+Pros:
+- Helpful for learning.
+
+Cons:
+- **But we learned.**
+
+### [mini.ai](https://github.com/echasnovski/mini.ai)
+More text objects.
+
+Pros:
+- A lot of textobjects.
+
+Cons:
+- Sometimes conflict with nvim-treesitter-textobjects.
+
+### [nvim-window-picker](https://github.com/s1n7ax/nvim-window-picker)
+Pick windows.
+Note that it's just a picker, you need to write usages by your hand.
+
+Pros:
+- Lightweight (0.82 ms on i5-4590).
+
+Cons:
+- Write anything by hand.
