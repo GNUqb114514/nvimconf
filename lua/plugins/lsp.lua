@@ -47,7 +47,9 @@ return {
             {'<leader>o', '<cmd>Lspsaga outline<CR>',
                 mode = 'n', desc = 'Show file hierachy'},
             {'<leader>t', '<cmd>Lspsaga term_toggle<CR>',
-                mode='n', desc='Open floating window'}
+                mode='n', desc='Open floating window'},
+            {'<leader>aa', '<cmd>Lspsaga code_action<CR>',
+                mode='n', desc='Code actions'},
         },
         lazy = false,
         cmd = "Lspsaga",
