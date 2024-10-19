@@ -44,11 +44,20 @@ return {
                 mode = 'n', desc = 'Rename symbol'},
             {'K', '<cmd>Lspsaga hover_doc<CR>',
                 mode = 'n', desc = 'Get hover docs'},
+            {'<leader>o', '<cmd>Lspsaga outline<CR>',
+                mode = 'n', desc = 'Show file hierachy'},
+            {'<leader>t', '<cmd>Lspsaga term_toggle<CR>',
+                mode='n', desc='Open floating window'}
         },
+        lazy = false,
+        cmd = "Lspsaga",
         opts = {
+            ui = {
+                code_action = ''
+            },
             rename = {
                 keys = {
-                    quit = '',
+                    quit = '	',
                 },
             },
         },

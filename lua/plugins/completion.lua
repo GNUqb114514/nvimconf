@@ -30,6 +30,7 @@ return {
             local cmp = require('cmp')
             local luasnip = require('luasnip')
             cmp.setup {
+                preselect = cmp.PreselectMode.None,
                 formatting = {
                     format = require('lspkind').cmp_format {
                         mode = 'symbol',
