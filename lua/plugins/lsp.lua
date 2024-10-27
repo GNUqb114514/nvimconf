@@ -1,6 +1,9 @@
 return {
     {
         "neovim/nvim-lspconfig",
+        config = function ()
+            require("lspconfig").rust_analyzer.setup {}
+        end
     },
     {
         "williamboman/mason.nvim",
@@ -13,7 +16,9 @@ return {
             "williamboman/mason.nvim",
         },
         opts = {
-            ensure_installed = {"lua_ls", "rust_analyzer", "pylsp"},
+            ensure_installed = {"lua_ls",
+                "rust_analyzer",
+                "pylsp"},
             handlers = {
                 function (server_name)
                     require("lspconfig")[server_name].setup {}
