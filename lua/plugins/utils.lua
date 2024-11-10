@@ -5,6 +5,7 @@ return {
             enable_check_bracket_line = true,
         },
     },
+    { 'echasnovski/mini.surround', version = '*' },
     {
         "folke/flash.nvim",
         keys = {
