@@ -21,6 +21,9 @@ return {
             -- or leave it empty to use the default settings
             -- refer to the configuration section below
         },
+        cond = function ()
+            return vim.g.started_by_firenvim ~= true
+        end
     },
     {
         'utilyre/barbecue.nvim',
@@ -31,10 +34,16 @@ return {
             'nvim-tree/nvim-web-devicons',
         },
         opts = {},
+        cond = function ()
+            return vim.g.started_by_firenvim ~= true
+        end
     },
     {
         'akinsho/bufferline.nvim',
         opts = {},
+        cond = function ()
+            return vim.g.started_by_firenvim ~= true
+        end
     },
     {   -- Show lines for indents.
         'lukas-reineke/indent-blankline.nvim',
@@ -44,6 +53,9 @@ return {
     {   -- Git integration, show lines indicating line status in git.
         'lewis6991/gitsigns.nvim',
         opts = {},
+        cond = function ()
+            return vim.g.started_by_firenvim ~= true
+        end
     },
     {
         "folke/trouble.nvim",
@@ -81,5 +93,8 @@ return {
             --     desc = "Quickfix List (Trouble)",
             -- },
         },
+        cond = function ()
+            return vim.g.started_by_firenvim ~= true
+        end
     }
 }
