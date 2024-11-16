@@ -62,4 +62,16 @@ return {
             )
         end
     },
+    {
+        'alohaia/fcitx.nvim',
+        opts = {
+            enable = {
+                cmdtext = 'insert',
+                select = 'insert',
+            }
+        },
+        config = function (_, opts)
+            require('fcitx')(opts)
+        end
+    }
 }
