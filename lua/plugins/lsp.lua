@@ -51,7 +51,16 @@ return {
                 mode = 'n', desc = 'Rename symbol'},
             {'K', '<cmd>Lspsaga hover_doc<CR>',
                 mode = 'n', desc = 'Get hover docs'},
-            {'<leader>o', '<cmd>Lspsaga outline<CR>',
+            {'<leader>o',
+                function ()
+                    if vim.bo.filetype == 'tex' then
+                        -- Use VimtexTocOpen for tex files because Lspsaga outline shows weird \hspace
+                        vim.api.nvim_command [[VimtexTocOpen]]
+                    else
+                        vim.api.nvim_command [[Lspsaga outline]]
+                    end
+                end,
+                -- '<cmd>Lspsaga outline<CR>',
                 mode = 'n', desc = 'Show file hierachy'},
             {'<leader>t', '<cmd>Lspsaga term_toggle<CR>',
                 mode='n', desc='Open floating window'},
@@ -63,6 +72,12 @@ return {
         opts = {
             ui = {
                 code_action = ''
+            },
+            outline = {
+                auto_preview = false,
+                keys = {
+                    quit = '<Esc>'
+                }
             },
             rename = {
                 keys = {
