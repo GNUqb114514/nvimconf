@@ -8,16 +8,5 @@ return {
             "nvim-telescope/telescope.nvim", -- optional
         },
         opts = {},
-        config = function (opts)
-            require("neogit").setup(opts)
-            local augroup = vim.api.nvim_create_augroup("NeoTreeGit", {})
-            vim.api.nvim_create_autocmd({"User"}, {
-                pattern = {"NeogitStatusRefreshed"},
-                callback = function ()
-                    require("neo-tree.events").fire_event("git_event")
-                end,
-                group = augroup,
-            })
-        end
     }
 }
