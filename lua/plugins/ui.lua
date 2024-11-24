@@ -11,7 +11,17 @@ return {
         'nvim-lualine/lualine.nvim',
         dependencies = { 'nvim-tree/nvim-web-devicons' },
         lazy = false,
-        opts = {},
+        opts = {
+            options = {
+                disabled_filetypes = {
+                    'neo-tree',
+                    'sagaoutline',
+                }
+            }
+        },
+        cond = function ()
+            return vim.g.started_by_firenvim ~= true
+        end
     },
     {
         "folke/todo-comments.nvim",
@@ -21,9 +31,6 @@ return {
             -- or leave it empty to use the default settings
             -- refer to the configuration section below
         },
-        cond = function ()
-            return vim.g.started_by_firenvim ~= true
-        end
     },
     {
         'utilyre/barbecue.nvim',
