@@ -27,9 +27,9 @@ return {
             },
         },
         config = function ()
-            local cmp = require('cmp')
-            local luasnip = require('luasnip')
-            cmp.setup {
+            local luasnip = require("luasnip")
+            local cmp = require("cmp")
+            cmp.setup({
                 preselect = cmp.PreselectMode.None,
                 formatting = {
                     format = require('lspkind').cmp_format {
@@ -54,47 +54,46 @@ return {
                     documentation = cmp.config.window.bordered(),
                 },
                 mapping = {
-                    ['<Tab>'] = function (fallback)
+                    ['<CR>'] = cmp.mapping(function(fallback)
                         if cmp.visible() then
-                            cmp.select_next_item{behavior=cmp.SelectBehavior.Insert}
+                            if luasnip.expandable() then
+                                luasnip.expand()
+                            else
+                                cmp.confirm({
+                                    select = false,
+                                })
+                            end
                         elseif luasnip.locally_jumpable(1) then
                             luasnip.jump(1)
                         else
                             fallback()
                         end
-                    end,
-                    ['<CR>'] = function (fallback)
-                        if cmp.visible() then
-                            if luasnip.expandable() then
-                                luasnip.expand()
-                            else
-                                local entry = cmp.get_selected_entry()
-                                if entry == nil then
-                                    fallback()
-                                    return
-                                end
-                                local kind = require('cmp.types').lsp.CompletionItemKind[entry:get_kind()]
-                                if kind == "Snippet" then
-                                    cmp.confirm()
-                                else
-                                    fallback()
-                                end
-                            end
-                        else
-                            fallback()
-                        end
-                    end,
-                    ['<S-Tab>'] = function (fallback)
-                        if cmp.visible() then
-                            cmp.select_prev_item{behavior=cmp.SelectBehavior.Insert}
-                        elseif luasnip.locally_jumpable(-1) then
+                    end),
+                    ['<S-CR>'] = cmp.mapping(function(fallback)
+                        if luasnip.locally_jumpable(-1) then
                             luasnip.jump(-1)
                         else
                             fallback()
                         end
-                    end,
+                    end),
+                    ["<Tab>"] = cmp.mapping(function(fallback)
+                        if cmp.visible() then
+                            cmp.select_next_item {
+                                behavior = cmp.SelectBehavior.Select,
+                            }
+                        else
+                            fallback()
+                        end
+                    end, { "i", "s" }),
+                    ["<S-Tab>"] = cmp.mapping(function(fallback)
+                        if cmp.visible() then
+                            cmp.select_prev_item()
+                        else
+                            fallback()
+                        end
+                    end, { "i", "s" }),
                 },
-            }
+            })
         end
     },
 }
